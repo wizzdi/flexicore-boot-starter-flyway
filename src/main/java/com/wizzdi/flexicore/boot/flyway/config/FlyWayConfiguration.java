@@ -8,6 +8,7 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.autoconfigure.flyway.FlywayConfigurationCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
@@ -15,9 +16,10 @@ public class FlyWayConfiguration {
 
 
 
+	@Lazy
 	@Bean
 	@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
-	public FlywayConfigurationCustomizer flywayConfigurationCustomizer(FlexiCorePluginManager flexiCorePluginManager) {
+	public FlywayConfigurationCustomizer flywayConfigurationCustomizer(@Lazy FlexiCorePluginManager flexiCorePluginManager) {
 
 
 		JavaMigration[] javaMigrations = flexiCorePluginManager.getExtensions(JavaMigration.class).toArray(JavaMigration[]::new);
