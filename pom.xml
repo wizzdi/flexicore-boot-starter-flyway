@@ -28,7 +28,6 @@
 
         <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
         <junit-jupiter.version>5.6.2</junit-jupiter.version>
-        <flyway-core.version>6.5.7</flyway-core.version>
     </properties>
 
     <distributionManagement>
@@ -82,7 +81,6 @@
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
-            <version>${flyway-core.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -140,7 +138,6 @@
             <groupId>com.wizzdi</groupId>
             <artifactId>flexicore-boot-starter-data-jpa</artifactId>
             <version>1.0.2</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
